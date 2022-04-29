@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-akshay/calculator/proto";
+
+message CalculatorMaxRequest{
+	int64 num = 1;
+}
+
+message CalculatorMaxResponse{
+	int64 result = 1;
+}

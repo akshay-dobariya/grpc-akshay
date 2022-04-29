@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-akshay/calculator/proto";
+
+import "sum.proto";
+import "primes.proto";
+import "avg.proto";
+import "max.proto";
+import "sqrt.proto";
+
+service CalculatorService{
+	rpc Sum (CalculatorSumRequest) returns (CalculatorSumResponse);
+	rpc Primes (CalculatorPrimesRequest) returns (stream CalculatorPrimesResponse);
+	rpc Average (stream CalculatorAvgRequest) returns (CalculatorAvgResponse);
+	rpc Max (stream CalculatorMaxRequest) returns (stream CalculatorMaxResponse);
+	rpc Sqrt (CalculatorSqrtRequest) returns (CalculatorSqrtResponse);
+}
